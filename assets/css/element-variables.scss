@@ -1,0 +1,28 @@
+/* 改变主题色变量 */
+$--color-primary: #0DBA46;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+/* @import "~element-ui/packages/theme-chalk/src/index"; */
+
+// 样式也按需引入，嘿嘿嘿
+@import "~element-ui/packages/theme-chalk/src/button";
+@import "~element-ui/packages/theme-chalk/src/input";
+@import "~element-ui/packages/theme-chalk/src/carousel";
+@import "~element-ui/packages/theme-chalk/src/dialog";
+@import "~element-ui/packages/theme-chalk/src/form";
+@import "~element-ui/packages/theme-chalk/src/form-item";
+@import "~element-ui/packages/theme-chalk/src/col";
+@import "~element-ui/packages/theme-chalk/src/row";
+@import "~element-ui/packages/theme-chalk/src/message-box";
+@import "~element-ui/packages/theme-chalk/src/menu";
+@import "~element-ui/packages/theme-chalk/src/menu-item-group";
+@import "~element-ui/packages/theme-chalk/src/menu-item";
+@import "~element-ui/packages/theme-chalk/src/submenu";
+@import "~element-ui/packages/theme-chalk/src/container";
+@import "~element-ui/packages/theme-chalk/src/main";
+@import "~element-ui/packages/theme-chalk/src/aside";
+@import "~element-ui/packages/theme-chalk/src/header";
+@import "~element-ui/packages/theme-chalk/src/pagination";
+

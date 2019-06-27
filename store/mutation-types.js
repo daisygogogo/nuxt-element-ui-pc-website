@@ -1,0 +1,3 @@
+export const SET_USERINFO = 'SET_USERINFO'
+export const SET_DIALOGEWMDATA = 'SET_DIALOGEWMDATA'
+export const SET_MASK = 'SET_MASK'
