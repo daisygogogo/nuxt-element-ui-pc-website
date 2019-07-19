@@ -1,14 +1,12 @@
 <template>
   <div class="wrapper">
-    我的订单
+    加入我们
   </div>
 </template>
 
 <script>
 
-
 export default {
-  middleware: 'route',
   data(){
     return{  
     }
@@ -29,4 +27,5 @@ export default {
     font-weight: bold;
     padding-top:50px;
   }
+
 </style>

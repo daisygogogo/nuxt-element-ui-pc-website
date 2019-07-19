@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    我的订单
+    我的客服
   </div>
 </template>
 
@@ -8,7 +8,6 @@
 
 
 export default {
-  middleware: 'route',
   data(){
     return{  
     }

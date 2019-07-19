@@ -39,6 +39,7 @@
 
 <script>
 import { checkMobile } from '@/utils/index'
+import {mapMutations} from 'vuex'
 
 export default {
   data() {
@@ -78,11 +79,26 @@ export default {
       verifyCodeText: '发送验证码'
     }
   },
+  mounted(){
+    let redirectUrl = this.$route.query.redirectUrl;
+    if(redirectUrl){
+      this.redirectUrl = redirectUrl;
+    }
+  },
   methods: {
     submitForm(formName) {
+      let self = this;
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert('submit!')
+          self.$message('登录成功');
+          self.setUserInfo({tel:self.ruleForm.tel})
+          if(self.redirectUrl){
+            console.log('self.redirectUrl',self.redirectUrl)
+            self.$router.push(self.redirectUrl)
+          }else{
+            self.$router.push('/')
+          }
+          
         } else {
           console.log('error submit!!')
           return false
@@ -132,7 +148,10 @@ export default {
           self.verifyCodeText = '重新发送'
         }
       }, 1000)
-    }
+    },
+    ...mapMutations({
+      setUserInfo:'SET_USERINFO'
+    })
   }
 }
 </script>

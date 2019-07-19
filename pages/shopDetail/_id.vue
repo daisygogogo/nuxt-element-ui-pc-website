@@ -1,32 +1,32 @@
 <template>
   <div class="wrapper">
-    我的订单
+    我是商家详情：{{id}}
   </div>
 </template>
 
 <script>
 
-
 export default {
-  middleware: 'route',
-  data(){
-    return{  
-    }
+  data() {
+    return {
+    };
   },
-  components: {
-    
+  asyncData({params}) {
+    let id = params.id;
+    return {id:id}; 
   },
-  methods:{
-    
+
+  methods: {
   }
-}
+};
 </script>
 
-<style>
+<style scoped lang="scss">
   .wrapper{
     font-size:20px;
     text-align: center;
     font-weight: bold;
     padding-top:50px;
   }
+
 </style>
