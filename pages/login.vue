@@ -10,13 +10,13 @@
         label-position="left"
       >
         <el-form-item label="手机号码" prop="tel">
-          <el-input v-model="ruleForm.tel" placeholder="请输入您的手机号码"></el-input>
+          <el-input v-model="ruleForm.tel" placeholder="请输入您的手机号码" maxlength="11"></el-input>
         </el-form-item>
 
         <el-row>
           <el-col :span="16">
             <el-form-item label="验证码" prop="verifyCode">
-              <el-input v-model="ruleForm.verifyCode" placeholder="请输入验证码"></el-input>
+              <el-input v-model="ruleForm.verifyCode" placeholder="请输入验证码" maxlength="4"></el-input>
             </el-form-item>
           </el-col>
           <el-col :span="1">
