@@ -1,6 +1,8 @@
 # official-website
 
 >  nuxt的demo，在项目脚手架初始化成功之后，自己添加了一些配置。
+* element-ui引入
+
 
 
 ## Build Setup
