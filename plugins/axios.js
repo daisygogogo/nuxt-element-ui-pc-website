@@ -9,15 +9,14 @@ export default function ({app,error}) {
   axios.onRequest(config => {
     console.log('request',config)
   })
-
   // 返回回调
   axios.onResponse(res => {
   	console.log('请求成功回调res',res)
   })
 
-  // 错误回调
+
+  // 错误回调，把错误信息显示在layout目录下的error页面上，便于调试
   axios.onError(err => {
     error({statusCode:404,message:JSON.stringify(err.config)})
-  	console.log('请求失败回调',JSON.stringify(err.config))
   })
 }
