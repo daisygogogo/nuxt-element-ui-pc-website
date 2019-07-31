@@ -40,7 +40,7 @@
 <script>
 import { checkMobile } from '@/utils/index'
 import {mapMutations} from 'vuex'
-
+ const Cookie = process.client ? require('js-cookie') : undefined
 export default {
   data() {
     var validateTel = (rule, value, callback) => {
@@ -91,7 +91,14 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           self.$message('登录成功');
-          self.setUserInfo({tel:self.ruleForm.tel})
+
+          let userToken = '123'; //实际项目中，需自己获取token
+          let userInfo = {tel:self.ruleForm.tel}
+          self.setToken(userToken);
+          Cookie.set('auth',userToken);
+          self.setUserInfo(userInfo);
+          Cookie.set('userInfo',userInfo);
+          
           if(self.redirectUrl){
             console.log('self.redirectUrl',self.redirectUrl)
             self.$router.push(self.redirectUrl)
@@ -151,7 +158,10 @@ export default {
     },
     ...mapMutations({
       setUserInfo:'SET_USERINFO'
-    })
+    }),
+    ...mapMutations({
+      'setToken' : 'SET_TOKEN'
+    }),
   }
 }
 </script>

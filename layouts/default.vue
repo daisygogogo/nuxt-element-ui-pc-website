@@ -9,12 +9,14 @@
   <el-menu-item index="/userCenter">我的订单</el-menu-item>
   <el-menu-item index="/joinUs">加盟合作</el-menu-item>
   <el-menu-item index="/myservice">我的客服</el-menu-item>
+  <el-menu-item v-if="userInfo && userInfo.tel">欢迎用户{{userInfo.tel}}</el-menu-item>
 </el-menu>
 <!-- <div class="line"></div> -->
     <nuxt />
   </div>
 </template>
 <script>
+  import { mapGetters } from "vuex";
 	export default {
   data() {
   	return{
@@ -42,7 +44,12 @@
         }
       }
 
-  }
+  },
+  computed: {
+    ...mapGetters([
+        'userInfo'
+    ])
+  },
 }
 </script>
 <style>

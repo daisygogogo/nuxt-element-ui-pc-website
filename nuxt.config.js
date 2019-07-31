@@ -48,14 +48,14 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {
-     prefix: process.env.__ENV=='dev'?'/proxy/':process.env.__ENV=='testing'?'https://douban.uieee.com/v2/':'http://xxx.org/api',
-     proxy:true,
-     credentials: true 
-  },
-  proxy: { //请求代理，由于上面axios里的prefix做了判断，只有dev环境，会做代理
-    '/proxy/': { target: 'https://douban.uieee.com/v2/', pathRewrite: { '^/proxy/': '' } }
-  },
+  // axios: {
+  //    prefix: process.env.__ENV=='dev'?'/proxy/':process.env.__ENV=='testing'?'https://douban.uieee.com/v2/':'http://xxx.org/api',
+  //    proxy:true,
+  //    credentials: true 
+  // },
+  // proxy: { //请求代理，由于上面axios里的prefix做了判断，只有dev环境，会做代理
+  //   '/proxy/': { target: 'https://douban.uieee.com/v2/', pathRewrite: { '^/proxy/': '' } }
+  // },
   // router: {  //即每次路由跳转会调用该中间件,Every time before go to other page,it would call the route function to check. 
   //   middleware: ['route'] 
   // },
