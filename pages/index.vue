@@ -43,6 +43,14 @@ export default {
       ]
     }
   },
+  async asyncData(context) {      
+         // 获取商品列表
+        // const { data:{ data: shopData } } = await context.$axios.post('/home/getHomeNewGoods')
+
+        // return {
+        //     shopList: shopData,
+        // }
+    },
   components: {
     
   },

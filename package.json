@@ -7,8 +7,10 @@
   "scripts": {
     "test": "jest",
     "dev": "cross-env process.env.__ENV=dev nuxt",
-    "build-testing": "cross-env process.env.__ENV=testing nuxt",
-    "build": "cross-env process.env.__ENV=production nuxt build",
+    "build-testing": "cross-env process.env.__ENV=testing nuxt build",
+    "build": "nuxt build",
+    "rc": "cross-env process.env.__ENV=rc pm2 start npm --watch --name 'web-pc' -- run start",
+    "serve": "cross-env process.env.__ENV=serve pm2 start npm --watch --name 'web-pc' -- run start",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },

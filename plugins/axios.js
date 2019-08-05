@@ -1,7 +1,16 @@
 export default function ({app,error}) {
   let axios = app.$axios; 
 
-  axios.defaults.baseURL='https://douban.uieee.com';
+  let baseURL = "";
+  console.log('process.env.__ENV',process.env.__ENV)
+  if(process.env.__ENV == 'rc'){
+    baseURL = 'http://rc.xxx:8011'
+  }else if(process.env.__ENV == 'production'){
+    baseURL = 'https://www.xxx:4011'
+  }else{
+    baseURL = 'http://test.xxx:8011'
+  }
+  axios.defaults.baseURL = baseURL;
  
   // 基本配置
   axios.defaults.timeout = 10000
